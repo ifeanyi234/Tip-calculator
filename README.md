@@ -9,7 +9,17 @@ between any number of people.
 
 ## Screenshot
 
-![Tip Calculator](./screenshots/screenshot.png)
+**Default Form State:**
+![Default State](images/screenshot1.png)
+
+**No-Input Error State:**
+![Error State](images/screenshot2.png)
+
+**Invalid Errorm State:**
+![Error State](images/screenshot3.png)
+
+**Calculated Result:**
+![Result State](images/screenshot4.png)
 
 ## Features
 
@@ -29,6 +39,17 @@ HTML, CSS, JavaScript (no frameworks)
 - Returning multiple calculated values from a single function using an object
 - parseFloat vs parseInt and when each is appropriate
 - Resetting form state cleanly after submission
+
+## Installation & Running Locally
+
+Because this is a Vanilla JavaScript project without build tools, setup is extremely simple:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ifeanyi234/Tip-calculator.git
+   cd Tip-calculator
+   ```
+   Open index.html directly in any modern web browser.
 
 ## Known Limitations
 
