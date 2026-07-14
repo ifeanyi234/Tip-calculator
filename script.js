@@ -5,8 +5,8 @@ const tipInput = document.querySelector("#tip");
 const presetBtn = document.querySelectorAll("button[type='button']");
 const submit = document.querySelector("#submit");
 const error = document.querySelector(".error");
+let tip = 0;
 
-const billValue = parseInt(billInput.value);
 // looping through preset button
 presetBtn.forEach((btn) =>
   // Adding click event on each btn
@@ -16,12 +16,16 @@ presetBtn.forEach((btn) =>
     // Adding active class to each element
     e.target.classList.add("active");
     // setting the value of tip to the preset
-    tipInput.value = parseInt(e.target.dataset.value);
+    tip = parseInt(e.target.dataset.value);
+    tipInput.value = tip;
   }),
 );
 
 submit.addEventListener("click", function (e) {
   e.preventDefault();
+  const billValue = parseInt(billInput.value);
+  const personValue = parseInt(numPerson.value);
+  console.log(billValue, personValue);
 
   if (
     billInput.value === "" ||
@@ -30,7 +34,8 @@ submit.addEventListener("click", function (e) {
   ) {
     error.classList.add("active");
     error.innerHTML = "Fields are empty!";
-    console.log(error);
+  } else if (!tip || billValue <= 0 || personValue <= 0) {
+    error.innerHTML = "Invalid number!, values should be higher than 0";
   } else {
     error.classList.remove("active");
   }
