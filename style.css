@@ -281,13 +281,14 @@ fieldset {
   margin: 2px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: 0.25s all ease-in-out;
 }
 
 .preset-btn-container button:hover {
   background-color: #f0f0f0;
   border-color: #888;
 }
-.preset-btn-container.active {
+.preset-btn-container .active {
   border-color: #888;
 }
 
