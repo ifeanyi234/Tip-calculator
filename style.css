@@ -1,0 +1,338 @@
+/* ===== Modern CSS Reset ===== */
+
+/* 1. Use a more intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Improve text rendering */
+html {
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  text-size-adjust: 100%;
+}
+
+/* 4. Set core body defaults */
+body {
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #000;
+  /* ============== */
+  flex-direction: column;
+  gap: 1rem;
+  height: 100vh;
+}
+
+/* 5. Remove list styles */
+/* ul, ol {
+  list-style: none;
+} */
+
+/* 6. Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 7. Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 8. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 9. Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+/* poppins font style */
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ===================================================== */
+header {
+  flex-grow: 0;
+  padding: 10px 5%;
+  background-color: #f5f4f4;
+}
+.error {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+
+  /* 
+    1. Perspective first (gives the 3D depth)
+    2. translate(-50%, -40px) keeps it centered X, and pushes it up Y
+    3. rotateX(-90deg) folds it flat upwards
+    4. scale(0.8) shrinks it slightly 
+  */
+  transform: perspective(600px) translate(-50%, -40px) rotateX(-90deg)
+    scale(0.8);
+
+  /* This is the secret sauce: it acts as the hinge at the top edge */
+  transform-origin: top center;
+
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  max-width: 600px;
+  width: 95%;
+  display: flex;
+
+  /* I added a cubic-bezier timing function for a really smooth, natural drop */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+}
+
+.error.active {
+  /* Bring it down to 0px Y, flatten the rotation to 0deg, and scale to normal */
+  transform: perspective(600px) translate(-50%, 0) rotateX(0deg) scale(1);
+  opacity: 1;
+}
+.brand {
+  font-size: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 30px;
+}
+.tip-info {
+  flex-direction: column;
+
+  /* gap: 10px; */
+
+  flex-grow: 1.5;
+}
+.info-list {
+  margin-left: 20px;
+}
+.tip-container {
+  background-color: #f5f4f4;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 2;
+  justify-content: center;
+}
+.output {
+  border: 5px dashed #dcdbdb;
+  border-radius: 10px;
+  padding: 5px 10px;
+  display: none;
+  margin-bottom: 20px;
+}
+form {
+  flex-direction: column;
+  gap: 10px;
+}
+fieldset {
+  border: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="number"] {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+input[type="submit"] {
+  color: rgb(249, 249, 249);
+  background-color: #141414;
+  border: none;
+  border-radius: 5px;
+  padding: 20px;
+  transition: 0.25s ease-in-out;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #141414;
+}
+input[type="submit"]:active {
+  transform: scale(0.9);
+}
+@media (min-width: 1025px) {
+  header {
+    padding: 30px 5%;
+  }
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10%;
+  }
+  .tip-container {
+    min-width: 400px;
+    border-radius: 10px;
+  }
+}
+@media (min-width: 1400px) {
+  .tip-container {
+    min-width: 600px;
+  }
+}
+@media (min-height: 1000px) and (max-width: 1025px) {
+  .tip-info {
+    justify-content: space-evenly;
+  }
+  form {
+    justify-content: space-evenly;
+    flex-grow: 2;
+  }
+}
+@media (max-width: 1025px) {
+  .tip-info {
+    padding-inline: 20px;
+  }
+}
+@media (max-height: 1000px) {
+  .tip-info {
+    gap: 10px;
+  }
+}

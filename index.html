@@ -3,8 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Projects | Tip Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+ID:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <title>JS Projects | Tip Calculator</title>
   </head>
-  <body></body>
+  <body class="flex poppins-regular">
+    <div class="error">Error</div>
+    <header>
+      <nav class="nav">
+        <div class="brand poppins-bold">Tip-Calculator</div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="flex tip-info">
+        <h2>What is Body Mass Index (tip)?</h2>
+        <p>
+          Body Mass Index (tip) is a widely used screening tool that estimates
+          whether a person has a healthy body weight for their height.
+        </p>
+        <p>
+          By comparing your weight to your height, this calculator will place
+          your result into one of four standard health categories:
+        </p>
+        <ul class="info-list">
+          <li class="info-item">Underweight: Below 18.5</li>
+          <li class="info-item">Normal weight: 18.5 – 24.9</li>
+          <li class="info-item">Overweight: 25.0 – 29.9</li>
+          <li class="info-item">Obese: 30.0 and above</li>
+        </ul>
+        <p>
+          <b>Note:</b> While tip is a helpful starting point for understanding
+          general health trends, it is not a diagnostic medical tool. It
+          calculates based purely on height and weight, meaning it does not
+          account for factors like muscle mass, bone density, or overall body
+          composition.
+        </p>
+      </div>
+      <div class="tip-container flex">
+        <div class="output">
+          <div class="tip">
+            <h1></h1>
+            <p>Normal weight</p>
+          </div>
+        </div>
+        <form action="#" class="flex">
+          <fieldset class="flex">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" />
+          </fieldset>
+          <fieldset class="flex">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" />
+          </fieldset>
+          <input type="submit" id="submit" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
