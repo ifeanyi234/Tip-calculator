@@ -1,9 +1,12 @@
 "use strict";
 const billInput = document.querySelector("#bill");
-const presetInput = document.querySelector("#tip-presets");
-const presetBtn = document.querySelectorAll("button[type='button']");
+const numPerson = document.querySelector("#person");
 const tipInput = document.querySelector("#tip");
+const presetBtn = document.querySelectorAll("button[type='button']");
+const submit = document.querySelector("#submit");
+const error = document.querySelector(".error");
 
+const billValue = parseInt(billInput.value);
 // looping through preset button
 presetBtn.forEach((btn) =>
   // Adding click event on each btn
@@ -16,3 +19,19 @@ presetBtn.forEach((btn) =>
     tipInput.value = parseInt(e.target.dataset.value);
   }),
 );
+
+submit.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  if (
+    billInput.value === "" ||
+    numPerson.value === "" ||
+    tipInput.value === ""
+  ) {
+    error.classList.add("active");
+    error.innerHTML = "Fields are empty!";
+    console.log(error);
+  } else {
+    error.classList.remove("active");
+  }
+});
