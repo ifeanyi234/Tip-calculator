@@ -275,6 +275,21 @@ fieldset {
   flex-direction: column;
   gap: 10px;
 }
+.preset-btn-container button {
+  cursor: pointer;
+  padding: 5px 10px;
+  margin: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.preset-btn-container button:hover {
+  background-color: #f0f0f0;
+  border-color: #888;
+}
+.preset-btn-container.active {
+  border-color: #888;
+}
 
 input[type="number"] {
   outline: none;

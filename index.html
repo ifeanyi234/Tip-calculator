@@ -21,44 +21,56 @@
     </header>
     <div class="container">
       <div class="flex tip-info">
-        <h2>What is Body Mass Index (tip)?</h2>
+        <h2>How does tipping work?</h2>
         <p>
-          Body Mass Index (tip) is a widely used screening tool that estimates
-          whether a person has a healthy body weight for their height.
+          A tip is a voluntary amount added to your bill as a gesture of
+          appreciation for good service. This calculator helps you split it
+          fairly.
         </p>
         <p>
-          By comparing your weight to your height, this calculator will place
-          your result into one of four standard health categories:
+          Select a tip percentage, enter your bill amount and number of people,
+          and we'll handle the math:
         </p>
         <ul class="info-list">
-          <li class="info-item">Underweight: Below 18.5</li>
-          <li class="info-item">Normal weight: 18.5 – 24.9</li>
-          <li class="info-item">Overweight: 25.0 – 29.9</li>
-          <li class="info-item">Obese: 30.0 and above</li>
+          <li class="info-item">Tip amount — what gets added</li>
+          <li class="info-item">Total bill — original + tip</li>
+          <li class="info-item">Per person — your share of the total</li>
         </ul>
         <p>
-          <b>Note:</b> While tip is a helpful starting point for understanding
-          general health trends, it is not a diagnostic medical tool. It
-          calculates based purely on height and weight, meaning it does not
-          account for factors like muscle mass, bone density, or overall body
-          composition.
+          <b>Note:</b> Tipping customs vary by country and setting. In Nigeria,
+          tipping is appreciated but not always expected — use your own judgment
+          based on the service you received.
         </p>
       </div>
-
       <div class="tip-container flex">
         <div class="output">
           <div class="tip">
             <h1></h1>
-            <p>Normal weight</p>
           </div>
         </div>
         <form action="#" class="flex">
           <fieldset class="flex">
-            <label for="height">Height (cm):</label>
-            <input type="number" id="height" />
+            <label for="bill">Bill (₦):</label>
+            <input type="number" id="bill" />
           </fieldset>
           <fieldset class="flex">
-            <label for="weight">Weight (kg):</label>
+            <label for="tip">Tip (%):</label>
+            <input
+              type="number"
+              id="tip"
+              readonly
+              placeholder="Select any of the below!"
+            />
+
+            <div class="preset-btn-container" id="tip-presets">
+              <button type="button" data-value="5">5%</button>
+              <button type="button" data-value="10">10%</button>
+              <button type="button" data-value="15">15%</button>
+              <button type="button" data-value="20">20%</button>
+            </div>
+          </fieldset>
+          <fieldset class="flex">
+            <label for="weight">Number of persons:</label>
             <input type="number" id="weight" />
           </fieldset>
           <input type="submit" id="submit" />
